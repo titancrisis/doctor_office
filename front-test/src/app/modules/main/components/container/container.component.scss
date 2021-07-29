@@ -1,0 +1,17 @@
+.main-panel {
+  width: 100%;
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 990px) {
+  #main-panel {
+    padding-left: 10px;
+    -webkit-transition: all 400ms;
+    -moz-transition: all 400ms;
+    -ms-transition: all 400ms;
+    -o-transition: all 400ms;
+    transition: all 400ms;
+  }
+}

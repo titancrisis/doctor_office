@@ -1,0 +1,21 @@
+<div class="nav-bar">
+  <div class="left-part">
+    <div>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle (click)="patient()">PACIENTES</mat-button-toggle>
+        <mat-button-toggle (click)="doctor()">DOCTORES</mat-button-toggle>
+        <mat-button-toggle (click)="consultation()">CONSULTA MÉDICA</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div class="nav-title">CONSULTORIO MÉDICO</div>
+  </div>
+  <div class="right-part">
+    <div class="right-part" id="nav-right-large">
+      <div class="nav-element">
+        <button mat-mini-fab id="nav-usuario-button" (click)="logout()" color="primary" matTooltip="SALIR">
+          <i class="material-icons-outlined">close</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

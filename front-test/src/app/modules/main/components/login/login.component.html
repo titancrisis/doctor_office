@@ -1,0 +1,12 @@
+<div class="login">
+  <form novalidate [formGroup]="formLogin" (ngSubmit)="login(formLogin)">
+    <h1>INGRESO</h1>
+    <input type="text" placeholder="Usuario" formControlName="user" required />
+    <input type="password" placeholder="Contraseña" formControlName="password" required>
+    <button [disabled]="formLogin.invalid" mat-raised-button>ACEPTAR</button>
+  </form>
+</div>
+
+<div>
+  <notifier-container></notifier-container>
+</div>

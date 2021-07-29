@@ -1,0 +1,35 @@
+<div class="dialog-title">{{ data.title }}</div>
+
+<form novalidate [formGroup]="form" (ngSubmit)="saveChanges(form)">
+  <div mat-dialog-content>
+
+    <mat-form-field>
+      <input matInput appUppercase placeholder="NOMBRE" formControlName="name" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput appUppercase placeholder="APELLIDO" formControlName="lastName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="FECHA DE NACIMIENTO" [matDatepicker]="picker" formControlName="birthDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="DIRECCIÓN" formControlName="address" required>
+    </mat-form-field>
+    <div>
+      <input *ngIf="transaction === 1 || transaction === 2" type="file" name="image"
+        accept="image/gif, image/jpg, image/jpeg, image/png" (change)="loadImage($event)" />
+      <img src="{{ image }}" height="150" matTooltip="Foto" />
+    </div>
+
+  </div>
+  <div class="container-boton-row" mat-dialog-actions align="center">
+    <button mat-stroked-button color="primary" type="submit" [disabled]="form.invalid">
+      {{ textButton }}
+    </button>
+    <button mat-stroked-button color="warn" type="button" (click)="close()">
+      CERRAR
+    </button>
+  </div>
+</form>

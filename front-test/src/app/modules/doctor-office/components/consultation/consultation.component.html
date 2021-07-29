@@ -1,0 +1,32 @@
+<div class="dialog-title">{{ data.title }}</div>
+
+<form novalidate [formGroup]="form" (ngSubmit)="saveChanges(form)">
+  <div mat-dialog-content>
+
+    <mat-form-field>
+      <mat-select placeholder="PACIENTE" formControlName="patientId">
+        <mat-option *ngFor="let item of listPatient" [value]="item.id"> {{item.fullName}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select placeholder="DOCTOR" formControlName="doctorId">
+        <mat-option *ngFor="let item of listDoctor" [value]="item.id"> {{item.fullName}} </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput appUppercase placeholder="MEDICAMENTOS RECETADOS" formControlName="prescriptionDrugs" required>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="DESCRIPCIÓN" formControlName="description" required></textarea>
+    </mat-form-field>
+
+  </div>
+  <div class="container-boton-row" mat-dialog-actions align="center">
+    <button mat-stroked-button color="primary" type="submit" [disabled]="form.invalid">
+      {{ textButton }}
+    </button>
+    <button mat-stroked-button color="warn" type="button" (click)="close()">
+      CERRAR
+    </button>
+  </div>
+</form>

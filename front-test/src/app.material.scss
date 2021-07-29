@@ -1,0 +1,116 @@
+@import "~@angular/material/theming";
+@include mat-core();
+
+@import "../src/assets/css/material-icons.css";
+
+$mat-blue: (
+    50 : #e8ecef,
+    100 : #c7d0d6,
+    200 : #a1b1bb,
+    300 : #7b929f,
+    400 : #5f7a8b,
+    500 : #436376,
+    600 : #3d5b6e,
+    700 : #345163,
+    800 : #2c4759,
+    900 : #1e3546,
+    A100 : #89ccff,
+    A200 : #56b6ff,
+    A400 : #23a0ff,
+    A700 : #0995ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #ffffff,
+    )
+);
+
+$primary: mat-palette($mat-blue, 500);
+$accent: mat-palette($mat-pink, 500, 900, A100);
+$warn: mat-palette($mat-red, 700);
+$theme: mat-light-theme($primary, $accent, $warn);
+@include angular-material-theme($theme);
+
+$config: mat-typography-config(
+  $font-family: "Roboto, Helvetica, Arial, sans-serif",
+  $body-1: mat-typography-level(12px, 0px, normal),
+  $body-2: mat-typography-level(12px, 0px, normal),
+  $button: mat-typography-level(12px, 0px, normal),
+  $input: mat-typography-level(12px, 1, normal),
+  $caption: mat-typography-level(12px, 0px, normal),
+);
+
+@include angular-material-typography($config);
+
+table {
+  width: 100%;
+}
+
+tr.table-element-row:hover {
+  background: #f7f7f7;
+  cursor: pointer;
+}
+
+tr.table-element-row:active {
+  background: #fafafa;
+}
+
+tr th div button.mat-sort-header-button {
+  font-weight: bolder;
+}
+
+.mat-form-field-checkbox {
+  padding-top: 6px;
+  padding-bottom: 13px;
+}
+
+span.mat-checkbox-label {
+  margin-top: 10px;
+}
+
+div.mat-radio-label-content {
+  margin-top: 0px;
+}
+
+.mat-form-field {
+  width: 100%;
+  font-size: 13px;
+}
+
+.tree-label-bold {
+  margin-top: 10px;
+  font-weight: bolder;
+}
+
+.tree-label {
+  margin-top: 10px;
+  font-weight: normal;
+}
+
+.tree-checkbox {
+  padding-top: 9px;
+}
+
+.tree-radio-button {
+  padding-top: 10px;
+}
+
+.mat-menu-item span {
+  font-size: 13px;
+  font-weight: normal;
+}
+
+div.mat-tab-label-content {
+  font-weight: bolder;
+}
